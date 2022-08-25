@@ -12,7 +12,7 @@
  </p>
 
  # Sobre
-
+<img src="./edesoft-project.fig.gif" >
  <p>
     Aplicação CRUD de Usuários em React, Redux, TS e MUI utilizando a Fake API, possibilitando a criação, edição, deletar e adicionar usuário
     <br>
