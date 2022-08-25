@@ -16,7 +16,8 @@
  <p>
     Aplicação CRUD de Usuários em React, Redux, TS e MUI utilizando a Fake API, possibilitando a criação, edição, deletar e adicionar usuário
     <br>
-    Observação: Ao editar e deletar usuários estava me retornando com erro, mesmo colando o código da documentação, então acabei optando pra não entregar o erro para esses casos
+    Observação: Ao editar e deletar usuários estava me retornando com erro, mesmo colando o código da documentação, então acabei optando pra não entregar o erro para esses casos.
+    Atenção: deleter usuário novo vai dar erro, pois o usuário não é inserido de verdade no banco de dados
  </p>
 
  # Funcionalidades 
