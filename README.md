@@ -38,7 +38,7 @@
  
  # Como testar
  <ol>
-    <li>É possivel testar projeto hospedado no <a href="">Github pages</a></li>
+    <li>É possivel testar projeto hospedado no <a href="https://yutaronegi.github.io/edesoft-project/">Github pages</a></li>
     <li>Porém se quiser testar na sua máquina só seguir os próximos passos</li>
     <li>Abre o terminal de sua prefência</li>
     <li>git clone https://github.com/YutaroNegi/edesoft-project</li>
