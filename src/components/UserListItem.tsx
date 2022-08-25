@@ -5,42 +5,43 @@ import PersonIcon from '@mui/icons-material/Person';
 import EmailIcon from '@mui/icons-material/Email';
 import Grid3x3Icon from '@mui/icons-material/Grid3x3';
 import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 import LoadingButton from '@mui/lab/LoadingButton';
 import {ToastSuccess, ToastError } from './Toaster'
 import { useAppSelector, useAppDispatch } from '../redux/hooks'
-import { deleteUser } from '../redux/userSlice'
+import { setAllUsers } from '../redux/userSlice'
+import EditModal from './EditModal'
 
 interface Name {
     firstname: string,
     lastname : string
-  }
+}
 
 interface User {
     id: number
     name: Name,
     email: string,
     username: string
-  }
+}
 
-  interface Props {
+interface Props {
     user: User
-  }
+}
 
 function UserListItem(props: Props){
+    const users = useAppSelector(state => state.user.value)
     const user = props.user
     const [btnLoading, setBtnLoading] = useState<number[]>([])
     const dispatch = useAppDispatch()
 
 
     async function deleteUser(userId : number){
-        try {
+        try {            
             setBtnLoading([...btnLoading, userId ])
             const response = await fetch(`https://fakestoreapi.com/users/${userId}`, {method: 'DELETE'})
-            const data = await response.json()
+            await response.json()
             ToastSuccess('User deleted!')
             setBtnLoading(btnLoading.filter(btn=> btn !== userId))
-            // dispatch(deleteUser({payload: userId}))
+            dispatch(setAllUsers(users.filter(user => user.id !== userId)))
         } catch (error) {
             ToastError('Error deleting user!')
             console.log('error deleting user!');
@@ -57,7 +58,7 @@ function UserListItem(props: Props){
             </Box>
             
             <Box sx={{display: 'flex', flexDirection: 'column'}}>
-                <LoadingButton  sx={{marginBottom: '1em'}} variant="contained"><EditIcon/></LoadingButton>
+                <EditModal user={user}/>
                 <LoadingButton loading={btnLoading.filter(btn => btn === user.id)[0] ? true : false} onClick={()=>{deleteUser(user.id)}} variant="contained"><DeleteIcon/></LoadingButton>
             </Box>
 

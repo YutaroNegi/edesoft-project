@@ -12,7 +12,9 @@
       "resolveJsonModule": true,
       "isolatedModules": true,
       "noEmit": true,
-      "jsx": "react-jsx"
+      "jsx": "react-jsx",
+      "noImplicitReturns": true,
+      "noImplicitAny": false
     },
     "include": ["src"],
     "exclude": [
