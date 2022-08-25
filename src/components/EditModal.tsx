@@ -46,8 +46,8 @@ interface Props {
 export default function EditModal(props: Props) {
   const users = useAppSelector(state => state.user.value)
   const dispatch = useAppDispatch()
-  const [user, setUser] = useState(props.user)
-  const [open, setOpen] = useState(false);
+  const [user, setUser] = useState<User>(props.user)
+  const [open, setOpen] = useState<boolean>(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [btnLoading, setBtnLoading] = useState<number[]>([])
@@ -84,7 +84,7 @@ export default function EditModal(props: Props) {
             method: "PUT",
             body: JSON.stringify(user)
         })
-        let data = await res.json()
+        await res.json()
 
         setBtnLoading(btnLoading.filter(btn=> btn !== userId))
         ToastSuccess('User successfully edited!')

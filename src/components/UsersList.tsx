@@ -30,7 +30,7 @@ function UserList(){
         <>
             <AddUser/>
 
-            <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', display: 'block', margin: '1em auto auto auto'}}>
+            <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', display: 'block', margin: '0.6em auto auto auto'}}>
                 {users.map((user)=>{
                     return(
                         <UserListItem key={user.id} user={user}/>
