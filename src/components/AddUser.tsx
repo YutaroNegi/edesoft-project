@@ -73,7 +73,7 @@ export default function AddUser() {
 
     async function addUser(){
         // acredito que exista algum problema na API, 
-        // tanto pra salvar ou editar, da erro mesmo colocando o codigo colado da documentação 
+        // tanto pra salvar ou adicionar, editar, da erro mesmo colocando o codigo colado da documentação 
         // por conta disso, eu to forçando o erro pra não dar erro
         // como na api não salva, resolvi realizar dessa forma
         if(!isEmail(user.email)) {
