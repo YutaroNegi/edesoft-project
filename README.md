@@ -43,7 +43,8 @@
     <li>Porém se quiser testar na sua máquina só seguir os próximos passos</li>
     <li>Abre o terminal de sua prefência</li>
     <li>git clone https://github.com/YutaroNegi/edesoft-project</li>
-    <li>edesoft-project</li>
+    <li>cd edesoft-project</li>
+    <li>npm i</li>
     <li>npm start</li>
  </ol>
 
